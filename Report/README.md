@@ -14,6 +14,8 @@
 | [`../Prompting/export-transcript-2026-06-04-green-d-loc-01.md`](../Prompting/export-transcript-2026-06-04-green-d-loc-01.md) | GREEN | Agent **export transcript** (D-LOC-01) |
 | [`05.MagicSquare_GREEN_D_SOL_01_Report.md`](05.MagicSquare_GREEN_D_SOL_01_Report.md) | GREEN | D-SOL-01 `solve_step_a` · int[6] · pytest PASS |
 | [`../Prompting/export-transcript-2026-06-04-green-d-sol-01.md`](../Prompting/export-transcript-2026-06-04-green-d-sol-01.md) | GREEN | Agent **export transcript** (D-SOL-01) |
+| [`06.MagicSquare_REFACTOR_Smell_Report.md`](06.MagicSquare_REFACTOR_Smell_Report.md) | REFACTOR | `/refactor-smell` · 스멜 표 · `/refactor-safe` 후보 (분석만) |
+| [`../Prompting/export-transcript-2026-06-04-refactor-smell.md`](../Prompting/export-transcript-2026-06-04-refactor-smell.md) | REFACTOR | Agent **export transcript** (스멜 분석) |
 
 ## 읽는 순서
 
@@ -24,6 +26,7 @@
 5. RED D-LOC-01 → `03.MagicSquare_RED_D_LOC_01_Skeleton_Report.md` (+ [`Prompting/`](../Prompting/) transcript)
 6. GREEN D-LOC-01 → `04.MagicSquare_GREEN_D_LOC_01_Report.md` (+ green transcript)
 7. GREEN D-SOL-01 → `05.MagicSquare_GREEN_D_SOL_01_Report.md` (+ green transcript) → `/golden-master`
+8. REFACTOR smell → `06.MagicSquare_REFACTOR_Smell_Report.md` (+ refactor transcript) → `/golden-master` → `/refactor-safe`
 
 ## Prompt 연동
 
