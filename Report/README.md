@@ -8,6 +8,8 @@
 | [`01.MagicSquare_ProblemDefinition_Report.md`](01.MagicSquare_ProblemDefinition_Report.md) | 1+3 | Mom Test + **세션 3** 통합·Rule/Command/Test Loop |
 | [`02.MagicSquare_Harness_CursorRules_Report.md`](02.MagicSquare_Harness_CursorRules_Report.md) | 2 | ECB Harness · `.cursorrules` · `spec` push |
 | [`export-transcript-2026-06-04-harness-session.md`](export-transcript-2026-06-04-harness-session.md) | 2 | Agent 대화 **export transcript** (Harness 세션) |
+| [`03.MagicSquare_RED_D_LOC_01_Skeleton_Report.md`](03.MagicSquare_RED_D_LOC_01_Skeleton_Report.md) | RED | D-LOC-01 스켈레톤 · pytest RED |
+| [`../Prompting/export-transcript-2026-06-04-red-d-loc-01-skeleton.md`](../Prompting/export-transcript-2026-06-04-red-d-loc-01-skeleton.md) | RED | Agent **export transcript** (D-LOC-01) |
 
 ## 읽는 순서
 
@@ -15,6 +17,7 @@
 2. 문제 정의 통합 → `01.MagicSquare_ProblemDefinition_Report.md`
 3. 구현 계약 → [`docs/PRD.md`](../docs/PRD.md)
 4. Harness·규칙 → `02.MagicSquare_Harness_CursorRules_Report.md` (+ transcript)
+5. RED D-LOC-01 → `03.MagicSquare_RED_D_LOC_01_Skeleton_Report.md` (+ [`Prompting/`](../Prompting/) transcript)
 
 ## Prompt 연동
 
