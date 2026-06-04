@@ -33,12 +33,12 @@ GRID_SIZE = _constants.GRID_SIZE
 MAGIC_SUM = _constants.MAGIC_SUM
 VALUE_MAX = _constants.VALUE_MAX
 
-# G1_LOC: 0 at 0-index (1,1) and (2,2) — 1-index blanks (2,2), (3,3); row-major
+# G1_LOC: 0 at 0-index (1,2) and (3,3) — 1-index blanks (2,3), (4,4); row-major
 _G1_LOC = [
     [VALUE_MAX, 3, 2, 13],
-    [5, 0, 11, 8],
-    [9, 6, 0, 12],
-    [4, 15, 14, 1],
+    [5, 10, 0, 8],
+    [9, 6, 7, 12],
+    [3, 15, 14, 0],
 ]
 
 
