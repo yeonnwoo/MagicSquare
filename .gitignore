@@ -1,6 +1,7 @@
 # Python (future)
 __pycache__/
 *.py[cod]
+*.egg-info/
 .venv/
 .pytest_cache/
 
