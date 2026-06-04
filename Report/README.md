@@ -10,6 +10,8 @@
 | [`export-transcript-2026-06-04-harness-session.md`](export-transcript-2026-06-04-harness-session.md) | 2 | Agent 대화 **export transcript** (Harness 세션) |
 | [`03.MagicSquare_RED_D_LOC_01_Skeleton_Report.md`](03.MagicSquare_RED_D_LOC_01_Skeleton_Report.md) | RED | D-LOC-01 스켈레톤 · pytest RED |
 | [`../Prompting/export-transcript-2026-06-04-red-d-loc-01-skeleton.md`](../Prompting/export-transcript-2026-06-04-red-d-loc-01-skeleton.md) | RED | Agent **export transcript** (D-LOC-01) |
+| [`04.MagicSquare_GREEN_D_LOC_01_Report.md`](04.MagicSquare_GREEN_D_LOC_01_Report.md) | GREEN | D-LOC-01 `find_blank_coords` · pytest PASS · G1 좌표 정정 |
+| [`../Prompting/export-transcript-2026-06-04-green-d-loc-01.md`](../Prompting/export-transcript-2026-06-04-green-d-loc-01.md) | GREEN | Agent **export transcript** (D-LOC-01) |
 
 ## 읽는 순서
 
@@ -18,6 +20,7 @@
 3. 구현 계약 → [`docs/PRD.md`](../docs/PRD.md)
 4. Harness·규칙 → `02.MagicSquare_Harness_CursorRules_Report.md` (+ transcript)
 5. RED D-LOC-01 → `03.MagicSquare_RED_D_LOC_01_Skeleton_Report.md` (+ [`Prompting/`](../Prompting/) transcript)
+6. GREEN D-LOC-01 → `04.MagicSquare_GREEN_D_LOC_01_Report.md` (+ green transcript)
 
 ## Prompt 연동
 

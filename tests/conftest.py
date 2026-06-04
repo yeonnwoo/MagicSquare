@@ -1,12 +1,30 @@
 """Shared pytest fixtures — grid data only (no domain logic)."""
 
 import importlib.util
+import sys
 from pathlib import Path
 
 import pytest
 
+_ROOT = Path(__file__).resolve().parents[1]
+_SRC = _ROOT / "src"
+if str(_SRC) not in sys.path:
+    sys.path.insert(0, str(_SRC))
+
+# tests/entity/ shadows src/entity; preload domain package from src.
+_entity_init = _SRC / "entity" / "__init__.py"
+_entity_spec = importlib.util.spec_from_file_location(
+    "entity",
+    _entity_init,
+    submodule_search_locations=[str(_SRC / "entity")],
+)
+_entity = importlib.util.module_from_spec(_entity_spec)
+assert _entity_spec.loader is not None
+sys.modules["entity"] = _entity
+_entity_spec.loader.exec_module(_entity)
+
 # tests/entity/ shadows src/entity on import; load SSOT constants by file path.
-_CONSTANTS_PATH = Path(__file__).resolve().parents[1] / "src" / "entity" / "constants.py"
+_CONSTANTS_PATH = _SRC / "entity" / "constants.py"
 _spec = importlib.util.spec_from_file_location("entity.constants", _CONSTANTS_PATH)
 _constants = importlib.util.module_from_spec(_spec)
 assert _spec.loader is not None
