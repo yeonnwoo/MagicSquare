@@ -1,0 +1,48 @@
+# MagicSquare_1004 — Cursor Rules (초안)
+
+## 프로젝트
+4×4 **부분 마방진** 검증·판정·(후속) Solver. 상위 계약: `docs/PRD.md`, `Report/01`, `Report/02`.
+
+## 도메인 (고정)
+- 격자: **4×4**. 빈칸 `0` **정확히 2개**. 채움 값 **1~16**, 0 제외 중복 없음.
+- 마방진 상수 **MAGIC_SUM = 34** (10라인: 4행·4열·2대각).
+- Solver 출력: **`int[6]`** → `[r1, c1, n1, r2, c2, n2]`. 좌표·인덱스는 **1-index** (1~4).
+- 오류 코드:
+  - **Boundary**만 **E001~E007** 정의·매핑·노출.
+  - **Entity**는 **E001~E005 처리 금지** (입력/계약 위반은 boundary·control에서 차단 후 entity 진입).
+
+## 아키텍처 (ECB)
+- 의존 방향: **boundary → control → entity** (단방향).
+- **entity**는 `boundary`, `control`, UI·I/O·프레임워크 **import 금지**.
+- **control**: 유스케이스·Command 오케스트레이션. 도메인 규칙은 entity에 위임.
+- **boundary**: CLI/API/어댑터, E001~E007 변환, 외부 표현.
+
+## Dual-Track 테스트
+| Track | Layer | 테스트 ID | 파일명 | Mock |
+|-------|-------|-----------|--------|------|
+| Logic | entity, control | `D-*` | `test_d_*.py` | **Domain Mock 금지** — 실제 객체·순수 함수만 |
+| UI | boundary | `U-*` | `test_u_*.py` | **Mock 허용** (I/O·포트·외부 의존) |
+
+- `tests/entity`, `tests/control` → Logic track. `tests/boundary` → UI track.
+- 테스트 docstring/주석에 **Track·Layer·대응 Command/FR** 명시.
+
+## TDD (RED → GREEN → REFACTOR)
+- **RED**: 실패하는 테스트를 먼저 작성. **assert 완화·`skip`·`xfail` 금지**.
+- **GREEN**: 테스트 통과에 필요한 최소 구현만.
+- **REFACTOR**: 통과 유지하며 중복·이름·경계 정리.
+- 작업 시작 시 한 줄 선언: `Phase: RED|GREEN|REFACTOR | Layer: entity|control|boundary | Track: Logic|UI`.
+
+## MagicConstant (SSOT)
+- `34`, `16`, `4`, `2`(빈칸 수), `10`(라인 수) 등 도메인 숫자는 **단일 모듈/상수**에서만 정의.
+- 산술·비교에 **리터럴 34/16 산재 금지** — `MAGIC_SUM`, `GRID_SIZE`, `VALUE_MAX` 등 이름으로 참조.
+
+## 코드·테스트 규칙
+- 최소 diff. 요청 범위 밖 파일·리팩터 금지.
+- 새 Command는 Rule/PRD와 매핑 후 시그니처 → RED 테스트 → 구현.
+- pytest: `python -m pytest tests/ -v`. Harness: `src/{entity,control,boundary}`, `tests/{entity,control,boundary}`.
+
+## AI 행동
+- **한국어**로 응답. 기술 식별자·오류 코드·테스트 ID는 원문 유지.
+- TDD 세션마다 **Phase / Layer / Track** 선언 후 진행.
+- **git commit·push는 사용자가 명시 요청할 때만** 수행.
+- Mom Test·1차 범위 밖(Solver UI 제품화 등)은 PRD Out-of-Scope 준수.

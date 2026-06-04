@@ -6,12 +6,15 @@
 |------|------|------|
 | [`01.magic-square-mom-test-step1-report.md`](01.magic-square-mom-test-step1-report.md) | 1 | Mom Test **인터뷰 원본** Q&A·증거·채점 |
 | [`01.MagicSquare_ProblemDefinition_Report.md`](01.MagicSquare_ProblemDefinition_Report.md) | 1+3 | Mom Test + **세션 3** 통합·Rule/Command/Test Loop |
+| [`02.MagicSquare_Harness_CursorRules_Report.md`](02.MagicSquare_Harness_CursorRules_Report.md) | 2 | ECB Harness · `.cursorrules` · `spec` push |
+| [`export-transcript-2026-06-04-harness-session.md`](export-transcript-2026-06-04-harness-session.md) | 2 | Agent 대화 **export transcript** (Harness 세션) |
 
 ## 읽는 순서
 
 1. STEP 1 원본 → `01.magic-square-mom-test-step1-report.md`
 2. 문제 정의 통합 → `01.MagicSquare_ProblemDefinition_Report.md`
 3. 구현 계약 → [`docs/PRD.md`](../docs/PRD.md)
+4. Harness·규칙 → `02.MagicSquare_Harness_CursorRules_Report.md` (+ transcript)
 
 ## Prompt 연동
 
